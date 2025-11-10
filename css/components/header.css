@@ -1,0 +1,532 @@
+/* ===== HEADER COMPONENT STYLES ===== */
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.1);
+    z-index: 9999;
+}
+
+.scroll-progress-bar {
+    width: 100%;
+    height: 0%;
+    background: var(--accent-orange);
+    transition: height 0.1s ease;
+}
+
+/* Navigation Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all var(--transition-normal);
+}
+
+.navbar-transparent {
+    background: transparent;
+    backdrop-filter: none;
+    transition: all 0.8s ease;
+}
+
+.navbar-transparent.scrolled,
+.navbar-transparent.mobile-menu-open,
+.navbar-transparent.mega-menu-open {
+    background: var(--primary-dark);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.nav-container {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-md);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    gap: var(--spacing-xl);
+}
+
+/* Logo Styles */
+.logo-image {
+    height: 40px;
+    width: auto;
+    transition: all var(--transition-normal);
+}
+
+.nav-logo {
+    order: 0;
+    flex-shrink: 0;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+
+/* Kontakt Button */
+.nav-kontakt {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    order: 2;
+}
+
+.kontakt-button {
+    background: var(--white);
+    color: var(--primary-dark);
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    transition: all 0.8s ease;
+    border: 2px solid var(--white);
+}
+
+.kontakt-button:hover {
+    background: var(--accent-orange);
+    color: var(--white);
+    border-color: var(--accent-orange);
+    transform: translateY(-2px);
+}
+
+.navbar-transparent .kontakt-button {
+    background: var(--white);
+    color: var(--primary-dark);
+    border-color: var(--white);
+}
+
+.navbar-transparent.scrolled .kontakt-button {
+    background: var(--white);
+    color: var(--primary-dark);
+    border-color: var(--white);
+}
+
+/* Navigation Menu Layout */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+}
+
+.nav-menu-left {
+    order: -1;
+}
+
+.nav-menu-right {
+    order: 1;
+}
+
+.nav-menu-main {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+    order: 1;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 300;
+    font-size: 16px;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    transition: color var(--transition-normal);
+    position: relative;
+    padding: var(--spacing-xs) 0;
+}
+
+.navbar-transparent .nav-link {
+    color: var(--white);
+}
+
+.navbar-transparent.scrolled .nav-link {
+    color: var(--white);
+}
+
+/* Disabled active nav link styles for subpages */
+.nav-link.active {
+    /* No active styling on subpages */
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--accent-orange);
+    transition: width var(--transition-normal);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    padding: var(--spacing-xs);
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-dark);
+    transition: var(--transition-normal);
+    border-radius: 2px;
+}
+
+.navbar-transparent .hamburger span {
+    background: var(--white);
+}
+
+.navbar-transparent.scrolled .hamburger span {
+    background: var(--white);
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Navigation */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.mobile-sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: var(--white);
+    z-index: 999;
+    transition: right var(--transition-normal);
+    overflow-y: auto;
+    box-shadow: var(--shadow-lg);
+}
+
+.mobile-sidebar.active {
+    right: 0;
+}
+
+
+.mobile-nav-link {
+    display: block;
+    padding: 15px var(--spacing-md);
+    color: var(--primary-dark);
+    text-decoration: none;
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    transition: background-color var(--transition-normal);
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-nav-link:hover {
+    background-color: var(--light-gray);
+    color: var(--accent-orange);
+}
+
+/* Disabled active mobile nav link styles for subpages */
+.mobile-nav-link.active {
+    /* No active styling on subpages */
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 1024px) {
+    .nav-container {
+        gap: var(--spacing-md);
+    }
+    
+    .nav-link {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 15px var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+    
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hamburger span {
+        height: 2px;
+    }
+    
+    .hamburger span:nth-child(2) {
+        width: 20px;
+        margin-left: 5px;
+    }
+    
+    .nav-kontakt {
+        display: none;
+    }
+    
+    .nav-logo {
+        position: relative;
+        left: auto;
+        transform: none;
+        order: -1;
+    }
+    
+    .nav-menu,
+    .nav-menu-left,
+    .nav-menu-right,
+    .nav-menu-main {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-sidebar {
+        width: 280px;
+        right: -280px;
+    }
+    
+    
+    .hamburger span {
+        width: 22px;
+    }
+}
+
+/* ===== MEGA MENU STYLES ===== */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--primary-dark);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 999;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.mega-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-menu-content {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 10px var(--spacing-xl);
+    display: grid;
+    gap: var(--spacing-xl);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.mega-menu-content.fade-out {
+    opacity: 0;
+}
+
+.mega-menu-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.mega-menu-item {
+    border-radius: 0;
+    transition: all var(--transition-normal);
+    border: 1px solid transparent;
+    height: 200px;
+    overflow: hidden;
+}
+
+.mega-menu-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-orange);
+}
+
+.mega-menu-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-decoration: none;
+    color: inherit;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    padding: var(--spacing-md);
+    position: relative;
+}
+
+.mega-menu-image {
+    display: none;
+}
+
+.mega-menu-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+}
+
+.mega-menu-info {
+    position: relative;
+    z-index: 2;
+}
+
+.mega-menu-info h4 {
+    font-family: var(--font-primary);
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.3;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.mega-menu-info p {
+    color: var(--white);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+    opacity: 0.9;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Mega menu trigger styling */
+.nav-link.has-mega-menu {
+    position: relative;
+}
+
+/* Remove arrow, rotation and underline effects for mega menu links */
+.nav-link.has-mega-menu::after {
+    display: none;
+}
+
+.nav-link.has-mega-menu:hover::after {
+    width: 0;
+    display: none;
+}
+
+/* Mega menu responsive */
+@media (max-width: 992px) {
+    .mega-menu-section {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: var(--spacing-md);
+    }
+    
+    .mega-menu-content {
+        padding: var(--spacing-lg);
+    }
+    
+    .mega-menu-image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .mega-menu-info h4 {
+        font-size: 1rem;
+    }
+    
+    .mega-menu-info p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .mega-menu-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .mega-menu {
+        display: none;
+    }
+}
+
+/* ===== WHITE UNDERLINE STYLES ===== */
+.white-underline {
+    position: relative;
+    text-decoration: none;
+}
+
+.white-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.white-underline:hover::after {
+    opacity: 1;
+}
+
+/* Only apply white underlines to main nav links with mega menus */
+.nav-link.has-mega-menu.white-underline::after {
+    background-color: white;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-link.has-mega-menu.white-underline:hover::after,
+.nav-link.has-mega-menu.white-underline.active::after {
+    background-color: white;
+    width: 100%;
+    opacity: 1;
+}
+
+/* Mega menu items should not have underlines */

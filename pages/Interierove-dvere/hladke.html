@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hladké interiérové dvere | DREVIS</title>
+    <meta name="description" content="Hladké interiérové dvere - minimalistický a moderný dizajn. Čisté línie a elegantný vzhľad pre súčasné interiéry.">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/base.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/header.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/footer.css?v=1.5">
+    <link rel="stylesheet" href="../../css/pages/presklenne-steny.css?v=1.5">
+    <link rel="stylesheet" href="../../css/pages/interierove-dvere.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/sidebar.css?v=1.5">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?v=9.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?v=9.0"></script>
+    
+    <!-- Lenis Smooth Scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js?v=9.0"></script>
+
+</head>
+<body>
+    <!-- Header will be inserted here by JS -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="subpage-hero">
+        <div class="hero-background">
+            <img src="../../sources/Bez-nazvu-14.jpg" alt="Hladké interiérové dvere" class="hero-bg-image">
+        </div>
+        <div class="hero-content">
+            <h1 class="subpage-hero-title">Hladké interiérové dvere</h1>
+        </div>
+    </section>
+
+    <!-- Interiérové Dvere Section -->
+    <section class="presklenne-section">
+        <div class="container">
+            <div class="presklenne-content-wrapper">
+                <!-- Sidebar Navigation -->
+                <div class="presklenne-sidebar">
+                    <ul class="sidebar-nav">
+                        <li><a href="ramove.html" style="background-image: url('../../sources/interierove/ramove.jpg');">
+                            <span class="sidebar-nav-text">RÁMOVÉ</span>
+                        </a></li>
+                        <li><a href="hladke.html" class="active" style="background-image: url('../../sources/interierove/hladke.jpg');">
+                            <span class="sidebar-nav-text">HLADKÉ</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Main Content -->
+                <div class="presklenne-content">
+                    <div class="presklenne-hero">
+                        <h2>Hladké interiérové dvere</h2>
+                        <p>Hladké drevené dvere ponúkajú veľa možností prevedenia. Lamelové, dyhované, prípadne hladké s nepriehľadnou farebnou povrchovou úpravou. Svetlíkmi rôznych tvarov a rôznym členením, je možné vizuálne prepojiť jednotlivé izby interiéru.</p>
+                        <p>Jadro dverí tvorí celodrevený kompozit, odolný voči tvarovým zmenám.</p>
+                    </div>
+
+                    <div class="content-section">
+                        <div class="feature-grid-4">
+                            <div class="feature-card">
+                                <img src="../../sources/interierove/obyc.panty_.jpg" alt="Obyčajné pánty" class="content-image">
+                                <h4>OBYČAJNÉ PÁNTY</h4>
+                                <p>Klasické závesné pánty s možnosťou nastavenia v 3 rôznych smeroch.</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <img src="../../sources/interierove/revezrzne-dvere.jpg" alt="Reverzné dvere" class="content-image">
+                                <h4>REVERZNÉ DVERE</h4>
+                                <p>Dvere sa otvárajú do zárubne, čo má využitie pri úzkych chodbách-miestnostiach pri otváraní. Okrem toho majú dvere estetickú funkciu, dvere sú v jednej rovine so zárubňou-bezfalcové dvere</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <img src="../../sources/interierove/skryte kovanie.jpg" alt="Skryté kovanie" class="content-image">
+                                <h4>SKRYTÉ KOVANIE</h4>
+                                <p>Určené pre bezfalcové dvere s bezúdržbovým ložiskom. Nastaviteľné v 3 rôznych smeroch.</p>
+                            </div>
+
+                            <div class="feature-card">
+                                <img src="../../sources/interierove/bezfalcove_dvere.jpg" alt="Bezfalcové prevedenie dverí" class="content-image">
+                                <h4>BEZFALCOVÉ PREVEDENIE DVERÍ</h4>
+                                <p>Majú dverné krídlo v jednej rovine so zárubňou. Vyznačujú sa jednoduchým, minimalistickým dizajnom a skrytými pántami. Napriek tomu, sú perfektne ovládateľné a nastaviteľné.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be inserted here by JS -->
+    <div id="footer-container"></div>
+
+    <!-- Load fallback immediately for fastest header/footer loading -->
+    <script src="../../js/fallback-components.js?v=9.0"></script>
+    
+    <!-- JS Components -->
+    <script type="module" src="../../js/main.js?v=9.0"></script>
+    <script src="../../script.js?v=9.0"></script>
+    
+    <!-- Initialize components directly if modules don't load -->
+    <script>
+        // Check if components loaded after a short delay
+        setTimeout(function() {
+            if (!document.querySelector('.navbar-transparent')) {
+                console.log('Modules did not load, trying fallback...');
+                if (typeof initFallbackComponents === 'function') {
+                    initFallbackComponents();
+                } else {
+                    // Load fallback script if not already loaded
+                    var script = document.createElement('script');
+                    script.src = '../../js/fallback-components.js';
+                    script.onload = function() {
+                        if (typeof initFallbackComponents === 'function') {
+                            initFallbackComponents();
+                        }
+                    };
+                    document.head.appendChild(script);
+                }
+            }
+        }, 100);
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Trnava, Horné bašty - rekonštrukcia - DREVIS | Rodinné domy</title>
+    <meta name="description" content="Realizácia rekonštrukcie objektu v historickom centre Trnavy. Drevo-hliníkové okná, historické dvojité okná, HS portály a zimné záhrady.">
+    <meta name="keywords" content="Trnava rekonštrukcia, Horné bašty, drevo-hliníkové okná, historické okná, HS portál, zimné záhrady, DREVIS">
+    <meta name="author" content="DREVIS - MIROSLAV HARAG">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://drevis.sk/trnava-horne-basty-rekonstrukcia.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../sources/FAVICON.png">
+    <link rel="apple-touch-icon" href="../sources/FAVICON.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og-type" content="website">
+    <meta property="og-url" content="https://drevis.sk/trnava-horne-basty-rekonstrukcia.html">
+    <meta property="og-title" content="Trnava, Horné bašty - rekonštrukcia - DREVIS">
+    <meta property="og-description" content="Realizácia rekonštrukcie objektu v historickom centre Trnavy s modernými riešeniami.">
+    <meta property="og-image" content="https://drevis.sk/sources/realizacie/Trnava Horne Basty - rekonstrukcia/vchodove-drevene-dvere.jpg">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/base.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/header.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/footer.css?v=1.5">
+    <link rel="stylesheet" href="../../css/pages/project-detail.css?v=1.5">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?v=9.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?v=9.0"></script>
+    
+    <!-- Lenis Smooth Scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js?v=9.0"></script>
+</head>
+<body>
+    <!-- Header will be inserted here by JS -->
+    <div id="header-container"></div>
+
+    <!-- Project Detail Container -->
+    <section class="project-detail-container">
+        <!-- Left Sidebar - Project Info -->
+        <div class="project-info-sidebar">
+            <div class="project-info-content">
+                <span class="project-accent-line"></span>
+                <h1 class="project-title">Trnava, Horné bašty - rekonštrukcia</h1>
+                <span class="project-date">2024</span>
+                
+                <div class="project-description">
+                    <p>Realizácia rekonštrukcie objektu v historickom centre Trnavy.</p>
+                    
+                    <p><strong>Kategória-</strong> Rodinné domy</p>
+                    
+                    <p>Na tejto realizácií sa nachádzajú až 4 typy konštrukcií. <strong>Drevo-hliníkové okná s profilom Classic</strong>, boli použité na miesta s južnou orientáciou, kde aj napriek expozícií UV žiarenia a poveternostných vplyvom budú bezúdržbové.</p>
+                    
+                    <p>Z uličnej strany bolo potrebné zachovať historický dojem celej výstavby. <strong>Uličné okná boli zrealizované ako dvojité-historické</strong>, ale s vylepšenými vlastnosťami, čo zahŕňa izolačné dvojsklo, prídavné tesnenia a rokmi vyvíjanú a overenú konštrukciu.</p>
+                    
+                    <p><strong>Hlavný vstup</strong>, taktiež z uličnej strany je tvorený drevenými-rámovými dverami s ozdobnou profiláciou.</p>
+                    
+                    
+                    
+                </div>
+                
+                <a href="../realizacie.html" class="back-to-gallery">
+                    ← Späť na realizácie
+                </a>
+            </div>
+        </div>
+        
+        <!-- Right Content - Photo Gallery -->
+        <div class="project-gallery-content">
+            <div class="project-gallery-grid" id="gallery-grid">
+                <!-- Photos will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal">
+        <button class="modal-nav modal-prev" onclick="prevImage()">‹</button>
+        <button class="modal-nav modal-next" onclick="nextImage()">›</button>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <img class="modal-image" id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <!-- Footer will be inserted here by JS -->
+    <div id="footer-container"></div>
+
+    <!-- Load fallback immediately for fastest header/footer loading -->
+    <script src="../../js/fallback-components.js?v=9.0"></script>
+    
+    <!-- JS Components -->
+    <script type="module" src="../../js/main.js?v=9.0"></script>
+    <script src="../../script.js?v=9.0"></script>
+    
+    <!-- Project Gallery Script -->
+    <script>
+        // Gallery state
+        let currentImageIndex = 0;
+        let galleryImages = [];
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lenis smooth scrolling
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                direction: 'vertical',
+                gestureDirection: 'vertical',
+                smooth: true,
+                mouseMultiplier: 1,
+                smoothTouch: false,
+                touchMultiplier: 2,
+                infinite: false,
+            });
+
+            function raf(time) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+            
+            // Project images
+            const projectFolder = 'realizacie/Trnava Horne Basty - rekonstrukcia';
+            const images = [
+                'vchodove-drevene-dvere.jpg',
+                'vchodove-dvere.jpg',
+                'vstupne-dvere.jpg',
+                'drevohlinikovy-hs-portal.jpg',
+                'zimna-zahrada-hs-portal.jpg',
+                'otvaravo-sklopne-drevohlinikove-okno.jpg',
+                'dvojkridlove-okno.jpg',
+                'kuchynske-okno.jpg',
+                'balkonove-drevohlinikove-dvere.jpg',
+                'balkonove-dvere.jpg'
+            ];
+            
+            loadGallery(images, projectFolder);
+        });
+        
+        function loadGallery(images, folder) {
+            const galleryGrid = document.getElementById('gallery-grid');
+            galleryImages = images.map(img => `../../sources/${folder}/${img}`);
+            
+            images.forEach((image, index) => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'project-gallery-item';
+                galleryItem.onclick = () => openModal(index);
+                
+                const img = document.createElement('img');
+                img.src = `../../sources/${folder}/${image}`;
+                img.alt = `Trnava, Horné bašty - rekonštrukcia - ${index + 1}`;
+                img.loading = 'lazy';
+                
+                galleryItem.appendChild(img);
+                galleryGrid.appendChild(galleryItem);
+            });
+        }
+        
+        function openModal(index) {
+            currentImageIndex = index;
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            
+            modalImage.src = galleryImages[index];
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function nextImage() {
+            const modalImage = document.getElementById('modalImage');
+            modalImage.classList.add('changing');
+            
+            setTimeout(() => {
+                currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                modalImage.src = galleryImages[currentImageIndex];
+                
+                setTimeout(() => {
+                    modalImage.classList.remove('changing');
+                }, 50);
+            }, 150);
+        }
+        
+        function prevImage() {
+            const modalImage = document.getElementById('modalImage');
+            modalImage.classList.add('changing');
+            
+            setTimeout(() => {
+                currentImageIndex = currentImageIndex === 0 ? galleryImages.length - 1 : currentImageIndex - 1;
+                modalImage.src = galleryImages[currentImageIndex];
+                
+                setTimeout(() => {
+                    modalImage.classList.remove('changing');
+                }, 50);
+            }, 150);
+        }
+        
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+        
+        // Close modal when clicking outside image
+        document.getElementById('imageModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        
+        // Initialize components directly if modules don't load
+        setTimeout(function() {
+            if (!document.querySelector('.navbar-transparent')) {
+                console.log('Modules did not load, trying fallback...');
+                if (typeof initFallbackComponents === 'function') {
+                    initFallbackComponents();
+                } else {
+                    // Load fallback script if not already loaded
+                    var script = document.createElement('script');
+                    script.src = '../../js/fallback-components.js';
+                    script.onload = function() {
+                        if (typeof initFallbackComponents === 'function') {
+                            initFallbackComponents();
+                        }
+                    };
+                    document.head.appendChild(script);
+                }
+            }
+        }, 100);
+    </script>
+</body>
+</html>

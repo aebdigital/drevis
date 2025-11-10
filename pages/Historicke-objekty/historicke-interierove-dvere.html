@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historické interiérové dvere | DREVIS</title>
+    <meta name="description" content="Historické interiérové dvere s ozdobnými profilovacími prvkami a zachovaným členením. Možnosť vyhotovenia aj ako protipožiarne.">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/base.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/header.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/footer.css?v=1.5">
+    <link rel="stylesheet" href="../../css/pages/presklenne-steny.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/sidebar.css?v=1.5">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?v=9.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?v=9.0"></script>
+    
+    <!-- Lenis Smooth Scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js?v=9.0"></script>
+
+</head>
+<body>
+    <!-- Header will be inserted here by JS -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="subpage-hero">
+        <div class="hero-background">
+            <img src="../../sources/Bez-nazvu-14.jpg" alt="Historické interiérové dvere" class="hero-bg-image">
+        </div>
+        <div class="hero-content">
+            <h1 class="subpage-hero-title">Historické interiérové dvere</h1>
+        </div>
+    </section>
+
+    <!-- Presklenne Steny Section -->
+    <section class="presklenne-section">
+        <div class="container">
+            <div class="presklenne-content-wrapper">
+                <!-- Left Sidebar Navigation -->
+                <div class="presklenne-sidebar">
+                    <ul class="sidebar-nav">
+                        <li><a href="historicke-okna.html" style="background-image: url('../../sources/historicke objekty/okna.jpg');">
+                            <span class="sidebar-nav-text">OKNÁ</span>
+                        </a></li>
+                        <li><a href="historicke-vchodove-dvere.html" style="background-image: url('../../sources/historicke objekty/vchodove.jpg');">
+                            <span class="sidebar-nav-text">VCHODOVÉ DVERE</span>
+                        </a></li>
+                        <li><a href="historicke-interierove-dvere.html" class="active" style="background-image: url('../../sources/historicke objekty/interierove dvere.jpg');">
+                            <span class="sidebar-nav-text">INTERIÉROVÉ DVERE</span>
+                        </a></li>
+                        <li><a href="historicke-brany.html" style="background-image: url('../../sources/historicke objekty/brany.jpg');">
+                            <span class="sidebar-nav-text">BRÁNY</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Main Content Area -->
+                <div class="presklenne-content">
+                    <div class="presklenne-hero">
+                        <h2>Historické drevené interiérové dvere</h2>
+                        <p>Interiérové dvere s ozdobnými profilovacími prvkami a zachovaným členením. Možnosť vyhotovenia aj ako protipožiarne EW WI 30,45; D3 C S. Pri výrobeinteriérových dverí prispôsobujeme repliky nových dverí vo veľkej miere pôvodným profilom. Nové profily podľa požiadaviek upravujeme tak, aby okrem architektonického a estetického dojmu, boli aj funkčné. Povrchovú úpravu je možné prispôsobiť podľa preferencií investora.</p>
+                    </div>
+
+                    <img src="../../sources/historicke objekty/interierove dvere.jpg" alt="Historické drevené interiérové dvere" class="content-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be inserted here by JS -->
+    <div id="footer-container"></div>
+
+    <!-- Load fallback immediately for fastest header/footer loading -->
+    <script src="../../js/fallback-components.js?v=9.0"></script>
+    
+    <!-- JS Components -->
+    <script type="module" src="../../js/main.js?v=9.0"></script>
+    <script src="../../script.js?v=9.0"></script>
+    
+    <!-- Initialize components directly if modules don't load -->
+    <script>
+        setTimeout(function() {
+            if (!document.querySelector('.navbar-transparent')) {
+                console.log('Modules did not load, trying fallback...');
+                if (typeof initFallbackComponents === 'function') {
+                    initFallbackComponents();
+                } else {
+                    var script = document.createElement('script');
+                    script.src = '../../js/fallback-components.js';
+                    script.onload = function() {
+                        if (typeof initFallbackComponents === 'function') {
+                            initFallbackComponents();
+                        }
+                    };
+                    document.head.appendChild(script);
+                }
+            }
+        }, 100);
+    </script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+/* ===== BASE CSS - Colors, Fonts, and Global Styles ===== */
+
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Martel';
+    src: url('../fonts/Martel-UltraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Martel';
+    src: url('../fonts/Martel-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Martel';
+    src: url('../fonts/Martel-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Martel';
+    src: url('../fonts/Martel-DemiBold.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Martel';
+    src: url('../fonts/Martel-Bold.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Martel';
+    src: url('../fonts/Martel-ExtraBold.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Martel';
+    src: url('../fonts/Martel-Heavy.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../fonts/Catamaran-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../fonts/Catamaran-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../fonts/Catamaran-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../fonts/Catamaran-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../fonts/Catamaran-Medium.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../fonts/Catamaran-SemiBold.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../fonts/Catamaran-Bold.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../fonts/Catamaran-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('../fonts/Catamaran-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* ===== CSS VARIABLES - Color Palette ===== */
+:root {
+    /* Primary Colors */
+    --primary-dark: #9f062e;
+    --primary-medium: #9f062e;
+    --primary-light: #9f062e;
+    --accent-orange: #9f062e;
+    --accent-orange-hover: #7d0523;
+    --accent-gold: #9f062e;
+    
+    /* Neutral Colors */
+    --white: #ffffff;
+    --light-gray: #f8f8f8;
+    --medium-gray: #cccccc;
+    --dark-gray: #9f062e;
+    --text-gray: black;
+    
+    /* Fonts */
+    --font-primary: 'neue-haas-grotesk-display', sans-serif;
+    --font-secondary: 'neue-haas-grotesk-text', sans-serif;
+    --font-accent: 'Caveat', cursive;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+    
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --spacing-xl: 60px;
+    --spacing-xxl: 80px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ===== GLOBAL RESET AND BASE STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Animation class for fade-in effect */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* Faster fallback for file:// protocol - show sections after 0.3s if GSAP doesn't load */
+.fade-in-up {
+    animation: fadeInFallback 0.6s ease-out 0.3s forwards;
+}
+
+@keyframes fadeInFallback {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+body {
+    font-family: var(--font-secondary);
+    font-weight: 300;
+    color: var(--primary-dark);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+/* ===== TYPOGRAPHY BASE ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+h5 {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+    font-size: 16px;
+    font-weight: 300;
+    color:black;
+}
+
+a {
+    color: var(--accent-orange);
+    text-decoration: none;
+    transition: color var(--transition-normal);
+}
+
+a:hover {
+    color: var(--accent-orange-hover);
+}
+
+/* ===== GLOBAL SECTION STYLES ===== */
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 60px;
+    font-weight: 400;
+    color: black;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* ===== LAYOUT BASE ===== */
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+
+
+/* ===== RESPONSIVE BASE ===== */
+@media (max-width: 768px) {
+    :root {
+        --spacing-md: 15px;
+        --spacing-lg: 30px;
+        --spacing-xl: 40px;
+        --spacing-xxl: 60px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 48px;
+    }
+    
+    .section-subtitle {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .section-title {
+        font-size: 36px;
+    }
+    
+    .section-subtitle {
+        font-size: 16px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+}
+
+
+/* ===== ANIMATION INITIAL STATES ===== */
+/* Only hide elements with fade-in-up class - GSAP will handle the animation */
+/* All other sections remain visible by default */
+
+/* ===== GLOBAL HERO SECTIONS ===== */
+/* Homepage hero stays full height */
+.hero {
+    height: 100vh;
+    min-height: 100vh;
+}
+
+/* All subpage heroes - 36vh height */
+.subpage-hero {
+    position: relative;
+    height: 36vh;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    overflow: hidden;
+}
+
+/* Hero background styling for all heroes */
+.hero .hero-background,
+.subpage-hero .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero .hero-bg-image,
+.subpage-hero .hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Hero overlay for all heroes */
+.hero::before,
+.subpage-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+/* Hero content styling for all heroes */
+.hero-content {
+    text-align: center;
+    z-index: 3;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Hero titles for all heroes */
+.hero-title,
+.subpage-hero-title {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
+    text-shadow: var(--shadow-md);
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* Hero subtitles for all heroes */
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    line-height: 1.6;
+    font-weight: 300;
+    color: var(--white) !important;
+}
+
+
+/* Responsive hero sizes */
+@media (max-width: 768px) {
+    .subpage-hero {
+        height: 30vh;
+        min-height: 250px;
+    }
+    
+    .hero-title,
+    .subpage-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .subpage-hero {
+        height: 25vh;
+        min-height: 200px;
+    }
+    
+    .hero-title,
+    .subpage-hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+}
+

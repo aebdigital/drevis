@@ -1,0 +1,221 @@
+/* ===== VCHODOVÉ DVERE PAGE STYLES ===== */
+
+/* Vchodove Dvere Section Layout */
+.vchodove-section {
+    padding: var(--spacing-xxl) 0;
+    background: var(--white);
+}
+
+.vchodove-content-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--spacing-xxl);
+    align-items: start;
+}
+
+.vchodove-main-content {
+    min-height: 600px;
+}
+
+/* Vchodove Sidebar styles removed - moved to sidebar.css */
+
+/* Vchodove Content */
+.vchodove-content {
+    min-height: 600px;
+}
+
+.vchodove-hero {
+    margin-bottom: var(--spacing-xl);
+}
+
+.vchodove-hero h1 {
+    font-family: var(--font-primary);
+    color: var(--primary-dark);
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.3;
+}
+
+.vchodove-hero p {
+    color: black;
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 800px;
+}
+
+.content-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.content-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.content-section:last-child {
+    margin-bottom: 0;
+}
+
+.content-section h2 {
+    font-family: var(--font-primary);
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-lg);
+}
+
+.content-section > p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-lg);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.feature-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.feature-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.feature-card {
+    background: var(--white);
+    border: 1px solid var(--light-gray);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    transition: all var(--transition-normal);
+}
+
+.feature-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-orange);
+}
+
+/* Override presklenne-steny.css for vchodové dvere to ensure proper borders */
+.feature-grid-4 .feature-card {
+    background: var(--white) !important;
+    border: 1px solid var(--light-gray) !important;
+}
+
+.feature-grid-4 .feature-card:hover {
+    border: 1px solid var(--accent-orange) !important;
+}
+
+.feature-card h4 {
+    font-family: var(--font-primary);
+    color: var(--primary-dark);
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--accent-orange);
+    padding-bottom: var(--spacing-xs);
+}
+
+.feature-card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+}
+
+.feature-card p:last-child {
+    margin-bottom: 0;
+}
+
+.feature-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-card li {
+    position: relative;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+.feature-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent-orange);
+    font-weight: bold;
+}
+
+.feature-card li:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 992px) {
+    .vchodove-content-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    /* Vchodove responsive sidebar styles removed - moved to sidebar.css */
+}
+
+@media (max-width: 768px) {
+    .vchodove-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .content-image {
+        height: 250px;
+    }
+    
+    .feature-card {
+        padding: var(--spacing-md);
+    }
+    
+    .feature-card h4 {
+        font-size: 1.2rem;
+    }
+    
+    /* More vchodove responsive sidebar styles removed - moved to sidebar.css */
+}
+
+@media (max-width: 480px) {
+    .vchodove-hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .vchodove-hero p,
+    .content-section > p {
+        font-size: 1rem;
+    }
+    
+    .content-image {
+        height: 200px;
+    }
+    
+    .feature-card {
+        padding: var(--spacing-sm);
+    }
+}

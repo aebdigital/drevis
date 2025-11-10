@@ -1,0 +1,76 @@
+/* Interiérové Dvere Page Styles - Override for feature cards only */
+
+/* Restore original feature card layout for interiérové dvere pages */
+.presklenne-content {
+    display: block !important;
+    position: static !important;
+}
+
+.presklenne-hero {
+    width: 100% !important;
+    display: block !important;
+    margin-bottom: var(--spacing-xl);
+}
+
+.presklenne-content .content-image {
+    width: 100% !important;
+    height: auto;
+    border-radius: var(--radius-md) !important;
+    box-shadow: var(--shadow-md) !important;
+    float: none !important;
+    margin-bottom: var(--spacing-md) !important;
+}
+
+/* Restore proper feature card styling */
+.feature-card {
+    background: var(--white) !important;
+    border: 1px solid var(--light-gray) !important;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    transition: all var(--transition-normal);
+    text-align: left;
+}
+
+.feature-card:hover {
+    box-shadow: var(--shadow-md) !important;
+    border-color: var(--accent-orange) !important;
+    transform: translateY(-2px);
+}
+
+.feature-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.feature-card h4 {
+    font-family: var(--font-primary);
+    color: var(--primary-dark);
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
+    border-bottom: 2px solid var(--accent-orange);
+    padding-bottom: var(--spacing-xs);
+}
+
+.feature-card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+}
+
+.feature-card .info-link {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    transition: color var(--transition-normal);
+}
+
+.feature-card .info-link:hover {
+    color: var(--primary-dark);
+}
+EOF < /dev/null

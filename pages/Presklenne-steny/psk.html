@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSK - Výklopno-posuvné dvere | DREVIS</title>
+    <meta name="description" content="PSK portály - výklopno-posuvné dvere s konštrukciou podobnou euro oknám. Cenovo dostupnejšie riešenie s vetraciou polohou.">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/base.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/header.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/footer.css?v=1.5">
+    <link rel="stylesheet" href="../../css/pages/presklenne-steny.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/sidebar.css?v=1.5">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?v=9.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?v=9.0"></script>
+    
+    <!-- Lenis Smooth Scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js?v=9.0"></script>
+
+</head>
+<body>
+    <!-- Header will be inserted here by JS -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="subpage-hero">
+        <div class="hero-background">
+            <img src="../../sources/Bez-nazvu-14.jpg" alt="PSK" class="hero-bg-image">
+        </div>
+        <div class="hero-content">
+            <h1 class="subpage-hero-title">PSK</h1>
+        </div>
+    </section>
+
+    <!-- Presklenne Steny Section -->
+    <section class="presklenne-section">
+        <div class="container">
+            <div class="presklenne-content-wrapper">
+                <!-- Sidebar Navigation -->
+                <div class="presklenne-sidebar">
+                    <ul class="sidebar-nav">
+                        <li><a href="hs-portal.html" style="background-image: url('../../sources/Presklenne steny/HS Portal.jpg');">
+                            <span class="sidebar-nav-text">HS portál</span>
+                        </a></li>
+                        <li><a href="fs-portal.html" style="background-image: url('../../sources/Presklenne steny/FS portal.jpg');">
+                            <span class="sidebar-nav-text">FS portál</span>
+                        </a></li>
+                        <li><a href="psk.html" class="active" style="background-image: url('../../sources/Presklenne steny/PSK.jpg');">
+                            <span class="sidebar-nav-text">PSK</span>
+                        </a></li>
+                        <li><a href="zimne-zahrady.html" style="background-image: url('../../sources/6.jpg');">
+                            <span class="sidebar-nav-text">Zimné záhrady</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Main Content -->
+                <div class="presklenne-content">
+                    <div class="presklenne-hero">
+                        <h2>Výklopno-posuvné dvere PSK</h2>
+                        <p>Narozdiel od HS portálov, PSK portály majú takmer identickú konštrukciu s euro oknami, prípadne balkónovými dverami. Rozdiel je v otváraní resp. zatváraní. Vďaka konštrukcii a kovaniu, sú cenovo dostupnejšie. PSK portál je možné dať do vetracej polohy podobne ako pri euro oknách.</p>
+                    </div>
+
+                    <img src="../../sources/Presklenne steny/PSK.jpg" alt="PSK Portál" class="content-image">
+
+                    <div class="content-section">
+                        <p>možnosť výroby vo všetkých profiloch 68, 78, 92<br>
+                        vetracia poloha<br>
+                        cenovo dostupnejší<br>
+                        možnosť  bezbariérového prahu<br>
+                        tesnejšie a odolnejšie voči hnanej vode z exteriéru</p>
+                        
+                        <p>Rozdelenie PSK závisí od výšky, šírky a váhy. Tieto faktory ovplyvňujú výber kovania a teda aj spôsob otvárania.</p>
+                    </div>
+
+                    <div class="content-section">
+                        <h2>PSK portál Z plus</h2>
+                        <p>Kovanie s poloautomatickou kľučkou zabezpečuje intuitívne otváranie a ľahkú manipuláciu aj portálmi väčších rozmerov.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be inserted here by JS -->
+    <div id="footer-container"></div>
+
+    <!-- Load fallback immediately for fastest header/footer loading -->
+    <script src="../../js/fallback-components.js?v=9.0"></script>
+    
+    <!-- JS Components -->
+    <script type="module" src="../../js/main.js?v=9.0"></script>
+    <script src="../../script.js?v=9.0"></script>
+    
+    <!-- Initialize components directly if modules don't load -->
+    <script>
+        setTimeout(function() {
+            if (!document.querySelector('.navbar-transparent')) {
+                console.log('Modules did not load, trying fallback...');
+                if (typeof initFallbackComponents === 'function') {
+                    initFallbackComponents();
+                } else {
+                    var script = document.createElement('script');
+                    script.src = '../../js/fallback-components.js';
+                    script.onload = function() {
+                        if (typeof initFallbackComponents === 'function') {
+                            initFallbackComponents();
+                        }
+                    };
+                    document.head.appendChild(script);
+                }
+            }
+        }, 100);
+    </script>
+</body>
+</html>

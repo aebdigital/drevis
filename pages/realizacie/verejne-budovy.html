@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Verejné budovy - Realizácie | DREVIS</title>
+    <meta name="description" content="Pozrite si naše realizácie okien, dverí a presklenných stien vo verejných budovách. Školy, úrady, hotely a ďalšie verejné projekty.">
+    <meta name="keywords" content="verejné budovy, realizácie DREVIS, okná verejné budovy, dvere úrady, školy, Prievidza">
+    <meta name="author" content="DREVIS - MIROSLAV HARAG">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://drevis.sk/Realizacie/verejne-budovy.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../sources/FAVICON.png">
+    <link rel="apple-touch-icon" href="../../sources/FAVICON.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og-type" content="website">
+    <meta property="og-url" content="https://drevis.sk/Realizacie/verejne-budovy.html">
+    <meta property="og-title" content="Verejné budovy - Realizácie | DREVIS">
+    <meta property="og-description" content="Pozrite si naše realizácie okien, dverí a presklenných stien vo verejných budovách.">
+    <meta property="og-image" content="https://drevis.sk/logo.png">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../../css/base.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/header.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/footer.css?v=1.5">
+    <link rel="stylesheet" href="../../css/pages/presklenne-steny.css?v=1.5">
+    <link rel="stylesheet" href="../../css/components/sidebar.css?v=1.5">
+    <link rel="stylesheet" href="../../css/pages/realizacie.css?v=1.5">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- GSAP Animation Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?v=9.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?v=9.0"></script>
+    
+    <!-- Lenis Smooth Scrolling -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js?v=9.0"></script>
+
+</head>
+<body>
+    <!-- Header will be inserted here by JS -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="subpage-hero">
+        <div class="hero-background">
+            <img src="../../sources/Bez-nazvu-14.jpg" alt="Realizácie verejné budovy" class="hero-bg-image">
+        </div>
+        <div class="hero-content">
+            <h1 class="subpage-hero-title">Verejné budovy</h1>
+        </div>
+    </section>
+
+    <!-- Realizacie Section -->
+    <section class="presklenne-section">
+        <div class="container">
+            <div class="presklenne-content-wrapper">
+                <!-- Left Sidebar Navigation -->
+                <div class="presklenne-sidebar">
+                    <ul class="sidebar-nav">
+                        <li><a href="rodinne-domy.html" style="background-image: url('../../sources/realizacie-main/rodinne domz.jpg');">
+                            <span class="sidebar-nav-text">RODINNÉ DOMY</span>
+                        </a></li>
+                        <li><a href="verejne-budovy.html" class="active" style="background-image: url('../../sources/realizacie-main/verejne budovy.jpg');">
+                            <span class="sidebar-nav-text">VEREJNÉ BUDOVY</span>
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Main Content Area -->
+                <div class="presklenne-content">
+                    <div class="section-header">
+                        <h2 class="section-title">Realizácie vo verejných budovách</h2>
+                        <p>Pozrite si portfólio našich úspešne realizovaných projektov okien, dverí a presklenných stien vo verejných budovách</p>
+                    </div>
+
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <a href="#" class="gallery-link">
+                                <div class="gallery-image-container">
+                                    <img src="../../sources/historicke-protipoziarne-dvere.jpg" alt="DREVIS - Základná škola projekt" loading="lazy">
+                                </div>
+                                <div class="gallery-info">
+                                    <p class="gallery-category">VEREJNÉ BUDOVY</p>
+                                    <h3 class="gallery-project-name">Základná škola</h3>
+                                    <p class="gallery-description">Komplexná výmena okien a protipožiarnych dverí v základnej škole s dôrazom na bezpečnosť a energetické úspory.</p>
+                                </div>
+                            </a>
+                        </div>
+
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer will be inserted here by JS -->
+    <div id="footer-container"></div>
+
+    <!-- Load fallback immediately for fastest header/footer loading -->
+    <script src="../../js/fallback-components.js?v=9.0"></script>
+    
+    <!-- JS Components -->
+    <script type="module" src="../../js/main.js?v=9.0"></script>
+    <script src="../../script.js?v=9.0"></script>
+    
+    <!-- Initialize components directly if modules don't load -->
+    <script>
+        setTimeout(function() {
+            if (!document.querySelector('.navbar-transparent')) {
+                console.log('Modules did not load, trying fallback...');
+                if (typeof initFallbackComponents === 'function') {
+                    initFallbackComponents();
+                } else {
+                    var script = document.createElement('script');
+                    script.src = '../../js/fallback-components.js';
+                    script.onload = function() {
+                        if (typeof initFallbackComponents === 'function') {
+                            initFallbackComponents();
+                        }
+                    };
+                    document.head.appendChild(script);
+                }
+            }
+        }, 100);
+    </script>
+
+    <style>
+        .gallery-description {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+    </style>
+</body>
+</html>

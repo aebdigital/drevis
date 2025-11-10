@@ -1,0 +1,322 @@
+/* ===== REALIZACIE PAGE STYLES ===== */
+
+/* Realizacie Section Layout */
+.realizacie-section {
+    padding: var(--spacing-xxl) 0;
+    background: var(--white);
+}
+
+.realizacie-content {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--spacing-xxl);
+    align-items: start;
+}
+
+.realizacie-main-content {
+    min-height: 600px;
+}
+
+.section-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-header h2 {
+    font-family: var(--font-primary);
+    color: var(--primary-dark);
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
+}
+
+.section-header p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* Filter Sidebar styles removed - moved to sidebar.css */
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.gallery-subtitle {
+    color: var(--accent-orange);
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: none;
+    margin-bottom: 15px;
+}
+
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.gallery-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.gallery-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+}
+
+.gallery-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.gallery-item:hover .gallery-image-container img {
+    transform: scale(1.08);
+}
+
+.gallery-info {
+    padding: var(--spacing-md);
+}
+
+.gallery-category {
+    color: var(--accent-orange);
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 1px;
+    margin-bottom: var(--spacing-xs);
+}
+
+.gallery-project-name {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--primary-dark);
+    margin-bottom: 0 !important;
+    line-height: 1.3;
+}
+
+.gallery-description {
+    font-size: 1rem;
+    color: black;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+}
+
+.project-details {
+    display: flex;
+    gap: var(--spacing-lg);
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    border-top: 1px solid var(--light-gray);
+    padding-top: var(--spacing-md);
+}
+
+.project-year,
+.project-size {
+    font-weight: 300;
+    position: relative;
+}
+
+.project-year::before {
+    content: '📅';
+    margin-right: var(--spacing-xs);
+}
+
+.project-size::before {
+    content: '📐';
+    margin-right: var(--spacing-xs);
+}
+
+/* Statistics Section */
+.stats-section {
+    padding: var(--spacing-xxl) 0;
+    background: var(--light-gray);
+}
+
+.stats-section .section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    color: var(--primary-dark);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stats-section .stat-item {
+    background: var(--white);
+    padding: var(--spacing-xl);
+    text-align: center;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.stats-section .stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.stats-section .stat-number {
+    font-family: var(--font-primary);
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--accent-orange);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1;
+}
+
+.stats-section .stat-label {
+    font-size: 1rem;
+    color: var(--primary-dark);
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 992px) {
+    .realizacie-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .filter-sidebar {
+        position: static;
+        max-width: 100%;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .filter-sidebar h3 {
+        text-align: center;
+    }
+    
+    .filter-list {
+        flex-direction: row;
+        gap: var(--spacing-xs);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        flex: 1;
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-sidebar {
+        max-width: 100%;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .filter-list {
+        flex-direction: row;
+        gap: var(--spacing-xs);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        flex: 1;
+        min-width: 120px;
+        padding: 10px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .gallery-image-container {
+        height: 250px;
+    }
+    
+    .gallery-info {
+        padding: var(--spacing-md);
+    }
+    
+    .gallery-project-name {
+        font-size: 1.3rem;
+    }
+    
+    .gallery-description {
+        font-size: 0.9rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    .stats-section .stat-item {
+        padding: var(--spacing-lg);
+    }
+    
+    .stats-section .stat-number {
+        font-size: 2.5rem;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    /* Gallery hero responsive styles moved to base.css */
+    
+    
+    .gallery-image-container {
+        height: 220px;
+    }
+    
+    .gallery-project-name {
+        font-size: 1.2rem;
+    }
+    
+    .project-details {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-section .stat-number {
+        font-size: 2.2rem;
+    }
+    
+    .stats-section .stat-label {
+        font-size: 0.9rem;
+    }
+}
