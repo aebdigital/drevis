@@ -47,13 +47,18 @@ function loadHeaderFallback() {
     // More robust path detection
     const isInPagesFolder = currentPath.includes('/pages/') || currentPath.includes('\\pages\\');
     const isInSubFolder = (currentPath.includes('/presklenne-steny/') || currentPath.includes('\\presklenne-steny\\') || 
+                          currentPath.includes('/Presklenne-steny/') || currentPath.includes('\\Presklenne-steny\\') ||
                           currentPath.includes('/projekty/') || currentPath.includes('\\projekty\\') ||
                           currentPath.includes('/okna/') || currentPath.includes('\\okna\\') ||
+                          currentPath.includes('/Okna/') || currentPath.includes('\\Okna\\') ||
                           currentPath.includes('/vchodove-dvere/') || currentPath.includes('\\vchodove-dvere\\') ||
+                          currentPath.includes('/Vchodove-dvere/') || currentPath.includes('\\Vchodove-dvere\\') ||
                           currentPath.includes('/interierove-dvere/') || currentPath.includes('\\interierove-dvere\\') ||
+                          currentPath.includes('/Interierove-dvere/') || currentPath.includes('\\Interierove-dvere\\') ||
                           currentPath.includes('/historicke-objekty/') || currentPath.includes('\\historicke-objekty\\') ||
+                          currentPath.includes('/Historicke-objekty/') || currentPath.includes('\\Historicke-objekty\\') ||
                           currentPath.includes('/realizacie/') || currentPath.includes('\\realizacie\\') ||
-                          currentPath.includes('/realizacie/') || currentPath.includes('\\realizacie\\'));
+                          currentPath.includes('/Realizacie/') || currentPath.includes('\\Realizacie\\'));
     
     // Debug logging for presklenne-steny
     if (currentPath.includes('Presklenne-steny')) {
@@ -63,10 +68,10 @@ function loadHeaderFallback() {
     
     // Additional check for file protocol with different path structure
     const pathSegments = currentPath.split('/').filter(segment => segment !== '');
-    const hasSubfolder = pathSegments.length >= 3 && (pathSegments.includes('presklenne-steny') || pathSegments.includes('projekty') || 
-                                                     pathSegments.includes('okna') || pathSegments.includes('vchodove-dvere') || 
-                                                     pathSegments.includes('interierove-dvere') || pathSegments.includes('historicke-objekty') || 
-                                                     pathSegments.includes('realizacie') || pathSegments.includes('realizacie'));
+    const hasSubfolder = pathSegments.length >= 3 && (pathSegments.includes('presklenne-steny') || pathSegments.includes('Presklenne-steny') || pathSegments.includes('projekty') || 
+                                                     pathSegments.includes('okna') || pathSegments.includes('Okna') || pathSegments.includes('vchodove-dvere') || pathSegments.includes('Vchodove-dvere') || 
+                                                     pathSegments.includes('interierove-dvere') || pathSegments.includes('Interierove-dvere') || pathSegments.includes('historicke-objekty') || pathSegments.includes('Historicke-objekty') || 
+                                                     pathSegments.includes('realizacie') || pathSegments.includes('Realizacie'));
     const hasPagesFolder = pathSegments.includes('pages');
     
     // Set navigation paths based on current location
@@ -525,10 +530,10 @@ function updateNavbarBackgroundFallback() {
     
     // Additional check for file protocol with different path structure
     const pathSegments = currentPath.split('/').filter(segment => segment !== '');
-    const hasSubfolder = pathSegments.length >= 3 && (pathSegments.includes('presklenne-steny') || pathSegments.includes('projekty') || 
-                                                     pathSegments.includes('okna') || pathSegments.includes('vchodove-dvere') || 
-                                                     pathSegments.includes('interierove-dvere') || pathSegments.includes('historicke-objekty') || 
-                                                     pathSegments.includes('realizacie') || pathSegments.includes('realizacie'));
+    const hasSubfolder = pathSegments.length >= 3 && (pathSegments.includes('presklenne-steny') || pathSegments.includes('Presklenne-steny') || pathSegments.includes('projekty') || 
+                                                     pathSegments.includes('okna') || pathSegments.includes('Okna') || pathSegments.includes('vchodove-dvere') || pathSegments.includes('Vchodove-dvere') || 
+                                                     pathSegments.includes('interierove-dvere') || pathSegments.includes('Interierove-dvere') || pathSegments.includes('historicke-objekty') || pathSegments.includes('Historicke-objekty') || 
+                                                     pathSegments.includes('realizacie') || pathSegments.includes('Realizacie'));
     const hasPagesFolder = pathSegments.includes('pages');
 
     let basePath;
@@ -874,14 +879,19 @@ function initMegaMenuFallback() {
     // Determine paths based on current location
     const currentPath = window.location.pathname;
     const isInPagesFolder = currentPath.includes('/pages/') || currentPath.includes('\\pages\\');
-    const isInSubFolder = (currentPath.includes('/presklenne-steny/') || currentPath.includes('\\Presklenne-steny\\') || 
+    const isInSubFolder = (currentPath.includes('/presklenne-steny/') || currentPath.includes('\\presklenne-steny\\') || 
+                          currentPath.includes('/Presklenne-steny/') || currentPath.includes('\\Presklenne-steny\\') ||
                           currentPath.includes('/projekty/') || currentPath.includes('\\projekty\\') ||
+                          currentPath.includes('/okna/') || currentPath.includes('\\okna\\') ||
                           currentPath.includes('/Okna/') || currentPath.includes('\\Okna\\') ||
-                          currentPath.includes('/interierove-dvere/') || currentPath.includes('\\Interierove-dvere\\') ||
-                          currentPath.includes('/vchodove-dvere/') || currentPath.includes('\\Vchodove-dvere\\') ||
-                          currentPath.includes('/historicke-objekty/') || currentPath.includes('\\Historicke-objekty\\') ||
+                          currentPath.includes('/interierove-dvere/') || currentPath.includes('\\interierove-dvere\\') ||
+                          currentPath.includes('/Interierove-dvere/') || currentPath.includes('\\Interierove-dvere\\') ||
+                          currentPath.includes('/vchodove-dvere/') || currentPath.includes('\\vchodove-dvere\\') ||
+                          currentPath.includes('/Vchodove-dvere/') || currentPath.includes('\\Vchodove-dvere\\') ||
+                          currentPath.includes('/historicke-objekty/') || currentPath.includes('\\historicke-objekty\\') ||
+                          currentPath.includes('/Historicke-objekty/') || currentPath.includes('\\Historicke-objekty\\') ||
                           currentPath.includes('/realizacie/') || currentPath.includes('\\realizacie\\') ||
-                          currentPath.includes('/realizacie/') || currentPath.includes('\\realizacie\\'));
+                          currentPath.includes('/Realizacie/') || currentPath.includes('\\Realizacie\\'));
     
     let sourcesPath;
     if (isInSubFolder) {
@@ -1077,7 +1087,7 @@ function initMegaMenuFallback() {
                 <div class="mega-menu-section">
                     ${data.items.map(item => `
                         <div class="mega-menu-item">
-                            <a href="${pathPrefix}${item.link}" class="mega-menu-link white-underline" style="background-image: url('${item.image}')">
+                            <a href="${pathPrefix}${item.link}" class="mega-menu-link white-underline">
                                 <img src="${item.image}" alt="${item.title}" class="mega-menu-image">
                                 <div class="mega-menu-info">
                                     <h4 class="white-underline">${item.title}</h4>
