@@ -50,9 +50,6 @@
     font-weight: 600;
     transition: all 0.3s ease;
     border-radius: 0;
-    background-size: cover;
-    background-position: left center;
-    background-repeat: no-repeat;
     position: relative;
     min-height: 120px;
     height: 120px;
@@ -60,6 +57,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     border: none;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 /* Overlay */
@@ -109,7 +107,17 @@
     align-items: start;
 }
 
-/* Background images are set inline in HTML via style attribute */
+/* Sidebar Navigation Image */
+.sidebar-nav-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
