@@ -420,7 +420,7 @@ function initMegaMenu() {
                 <div class="mega-menu-section">
                     ${data.items.map(item => `
                         <div class="mega-menu-item">
-                            <a href="${pathPrefix}${item.link}" class="mega-menu-link" style="background-image: url('${item.image}')">
+                            <a href="${pathPrefix}${item.link}" class="mega-menu-link">
                                 <img src="${item.image}" alt="${item.title}" class="mega-menu-image">
                                 <div class="mega-menu-info">
                                     <h4>${item.title}</h4>
