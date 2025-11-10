@@ -16,12 +16,12 @@ function loadNavigation() {
     
     // More robust path detection
     const isInPagesFolder = currentPath.includes('/pages/') || currentPath.includes('\\pages\\');
-    const isInSubFolder = (currentPath.includes('/Presklenne-steny/') || currentPath.includes('\\Presklenne-steny\\') || 
+    const isInSubFolder = (currentPath.includes('/presklenne-steny/') || currentPath.includes('\\presklenne-steny\\') || 
                           currentPath.includes('/projekty/') || currentPath.includes('\\projekty\\') ||
-                          currentPath.includes('/Okna/') || currentPath.includes('\\Okna\\') ||
-                          currentPath.includes('/Vchodove-dvere/') || currentPath.includes('\\Vchodove-dvere\\') ||
-                          currentPath.includes('/Interierove-dvere/') || currentPath.includes('\\Interierove-dvere\\') ||
-                          currentPath.includes('/Historicke-objekty/') || currentPath.includes('\\Historicke-objekty\\') ||
+                          currentPath.includes('/okna/') || currentPath.includes('\\okna\\') ||
+                          currentPath.includes('/vchodove-dvere/') || currentPath.includes('\\vchodove-dvere\\') ||
+                          currentPath.includes('/interierove-dvere/') || currentPath.includes('\\interierove-dvere\\') ||
+                          currentPath.includes('/historicke-objekty/') || currentPath.includes('\\historicke-objekty\\') ||
                           currentPath.includes('/realizacie/') || currentPath.includes('\\realizacie\\') ||
                           currentPath.includes('/realizacie/') || currentPath.includes('\\realizacie\\'));
     
@@ -34,9 +34,9 @@ function loadNavigation() {
     
     // Additional check for file protocol with different path structure
     const pathSegments = currentPath.split('/').filter(segment => segment !== '');
-    const hasSubfolder = pathSegments.length >= 3 && (pathSegments.includes('Presklenne-steny') || pathSegments.includes('projekty') || 
-                                                     pathSegments.includes('Okna') || pathSegments.includes('Vchodove-dvere') || 
-                                                     pathSegments.includes('Interierove-dvere') || pathSegments.includes('Historicke-objekty') || 
+    const hasSubfolder = pathSegments.length >= 3 && (pathSegments.includes('presklenne-steny') || pathSegments.includes('projekty') || 
+                                                     pathSegments.includes('okna') || pathSegments.includes('vchodove-dvere') || 
+                                                     pathSegments.includes('interierove-dvere') || pathSegments.includes('historicke-objekty') || 
                                                      pathSegments.includes('realizacie') || pathSegments.includes('realizacie'));
     const hasPagesFolder = pathSegments.includes('pages');
     
@@ -76,11 +76,11 @@ function loadNavigation() {
                     </a>
                 </div>
                 <ul class="nav-menu nav-menu-main">
-                    <li><a href="${pagesPath}Okna/drevohlinikove-okna.html" class="nav-link has-mega-menu white-underline" data-mega="okna">Okná</a></li>
-                    <li><a href="${pagesPath}Vchodove-dvere/drevohlinikove-dvere.html" class="nav-link has-mega-menu white-underline" data-mega="vchodove-dvere">Vchodové dvere</a></li>
-                    <li><a href="${pagesPath}Interierove-dvere/ramove.html" class="nav-link has-mega-menu white-underline" data-mega="interierove-dvere">Interiérové dvere</a></li>
-                    <li><a href="${pagesPath}Presklenne-steny/hs-portal.html" class="nav-link has-mega-menu white-underline" data-mega="presklenne-steny">Presklenné steny</a></li>
-                    <li><a href="${pagesPath}Historicke-objekty/historicke-okna.html" class="nav-link has-mega-menu white-underline" data-mega="historicke-objekty">Historické objekty</a></li>
+                    <li><a href="${pagesPath}okna/drevohlinikove-okna.html" class="nav-link has-mega-menu white-underline" data-mega="okna">Okná</a></li>
+                    <li><a href="${pagesPath}vchodove-dvere/drevohlinikove-dvere.html" class="nav-link has-mega-menu white-underline" data-mega="vchodove-dvere">Vchodové dvere</a></li>
+                    <li><a href="${pagesPath}interierove-dvere/ramove.html" class="nav-link has-mega-menu white-underline" data-mega="interierove-dvere">Interiérové dvere</a></li>
+                    <li><a href="${pagesPath}presklenne-steny/hs-portal.html" class="nav-link has-mega-menu white-underline" data-mega="presklenne-steny">Presklenné steny</a></li>
+                    <li><a href="${pagesPath}historicke-objekty/historicke-okna.html" class="nav-link has-mega-menu white-underline" data-mega="historicke-objekty">Historické objekty</a></li>
                     <li><a href="${pagesPath}realizacie/rodinne-domy.html" class="nav-link has-mega-menu white-underline" data-mega="realizacie">Realizácie</a></li>
                     <li><a href="${pagesPath}sluzby.html" class="nav-link white-underline">Služby</a></li>
                 </ul>
@@ -217,12 +217,12 @@ function initMegaMenu() {
     // Determine paths based on current location
     const currentPath = window.location.pathname;
     const isInPagesFolder = currentPath.includes('/pages/') || currentPath.includes('\\pages\\');
-    const isInSubFolder = (currentPath.includes('/Presklenne-steny/') || currentPath.includes('\\Presklenne-steny\\') || 
+    const isInSubFolder = (currentPath.includes('/presklenne-steny/') || currentPath.includes('\\presklenne-steny\\') || 
                           currentPath.includes('/projekty/') || currentPath.includes('\\projekty\\') ||
-                          currentPath.includes('/Okna/') || currentPath.includes('\\Okna\\') ||
-                          currentPath.includes('/Interierove-dvere/') || currentPath.includes('\\Interierove-dvere\\') ||
-                          currentPath.includes('/Vchodove-dvere/') || currentPath.includes('\\Vchodove-dvere\\') ||
-                          currentPath.includes('/Historicke-objekty/') || currentPath.includes('\\Historicke-objekty\\') ||
+                          currentPath.includes('/okna/') || currentPath.includes('\\okna\\') ||
+                          currentPath.includes('/interierove-dvere/') || currentPath.includes('\\interierove-dvere\\') ||
+                          currentPath.includes('/vchodove-dvere/') || currentPath.includes('\\vchodove-dvere\\') ||
+                          currentPath.includes('/historicke-objekty/') || currentPath.includes('\\historicke-objekty\\') ||
                           currentPath.includes('/realizacie/') || currentPath.includes('\\realizacie\\') ||
                           currentPath.includes('/realizacie/') || currentPath.includes('\\realizacie\\'));
     
@@ -243,13 +243,13 @@ function initMegaMenu() {
                     title: 'Drevohliníkové',
                     description: 'Kombinácia dreva a hliníka',
                     image: `${sourcesPath}okna/drevohlinikove/ALU classic.jpg`,
-                    link: 'Okna/drevohlinikove-okna.html'
+                    link: 'okna/drevohlinikove-okna.html'
                 },
                 {
                     title: 'Drevené',
                     description: 'Tradičné drevené okná',
                     image: `${sourcesPath}okna/drevene/Drevene okno Clasic 68-18.jpg`,
-                    link: 'Okna/drevene-okna.html'
+                    link: 'okna/drevene-okna.html'
                 }
             ]
         },
@@ -260,13 +260,13 @@ function initMegaMenu() {
                     title: 'Drevohliníkové',
                     description: 'Moderná kombináácia materiálov',
                     image: `${sourcesPath}drevohlinikove.jpg`,
-                    link: 'Vchodove-dvere/drevohlinikove-dvere.html'
+                    link: 'vchodove-dvere/drevohlinikove-dvere.html'
                 },
                 {
                     title: 'Drevené',
                     description: 'Klasické drevené dvere',
                     image: `${sourcesPath}drevene.jpg`,
-                    link: 'Vchodove-dvere/drevene-dvere.html'
+                    link: 'vchodove-dvere/drevene-dvere.html'
                 }
             ]
         },
@@ -277,13 +277,13 @@ function initMegaMenu() {
                     title: 'Rámové dvere',
                     description: 'Klasické rámové riešenie',
                     image: `${sourcesPath}interierove/ramove.jpg`,
-                    link: 'Interierove-dvere/ramove.html'
+                    link: 'interierove-dvere/ramove.html'
                 },
                 {
                     title: 'Hladké dvere',
                     description: 'Moderný minimalistický vzhľad',
                     image: `${sourcesPath}interierove/hladke.jpg`,
-                    link: 'Interierove-dvere/hladke.html'
+                    link: 'interierove-dvere/hladke.html'
                 }
             ]
         },
@@ -294,25 +294,25 @@ function initMegaMenu() {
                     title: 'HS Portal',
                     description: 'Paralelné posuvné steny',
                     image: `${sourcesPath}Presklenne steny/HS Portal.jpg`,
-                    link: 'Presklenne-steny/hs-portal.html'
+                    link: 'presklenne-steny/hs-portal.html'
                 },
                 {
                     title: 'FS Portal',
                     description: 'Skladacie systémy',
                     image: `${sourcesPath}Presklenne steny/FS portal.jpg`,
-                    link: 'Presklenne-steny/fs-portal.html'
+                    link: 'presklenne-steny/fs-portal.html'
                 },
                 {
                     title: 'PSK',
                     description: 'Výklopno-posuvné dvere',
                     image: `${sourcesPath}Presklenne steny/PSK.jpg`,
-                    link: 'Presklenne-steny/psk.html'
+                    link: 'presklenne-steny/psk.html'
                 },
                 {
                     title: 'Zimné záhrady',
                     description: 'Presklené priestory',
                     image: `${sourcesPath}6.jpg`,
-                    link: 'Presklenne-steny/zimne-zahrady.html'
+                    link: 'presklenne-steny/zimne-zahrady.html'
                 }
             ]
         },
@@ -323,25 +323,25 @@ function initMegaMenu() {
                     title: 'Historické okná',
                     description: 'Obnova historických drevených okien',
                     image: `${sourcesPath}historicke objekty/okna.jpg`,
-                    link: 'Historicke-objekty/historicke-okna.html'
+                    link: 'historicke-objekty/historicke-okna.html'
                 },
                 {
                     title: 'Vchodové dvere',
                     description: 'Repliky s kováčskym kovaním',
                     image: `${sourcesPath}historicke objekty/vchodove.jpg`,
-                    link: 'Historicke-objekty/historicke-vchodove-dvere.html'
+                    link: 'historicke-objekty/historicke-vchodove-dvere.html'
                 },
                 {
                     title: 'Interiérové dvere',
                     description: 'Ozdobné profilovacie prvky',
                     image: `${sourcesPath}historicke objekty/interierove dvere.jpg`,
-                    link: 'Historicke-objekty/historicke-interierove-dvere.html'
+                    link: 'historicke-objekty/historicke-interierove-dvere.html'
                 },
                 {
                     title: 'Historické brány',
                     description: 'Masívne konštrukcie s ozdobným kovaním',
                     image: `${sourcesPath}historicke objekty/brany.jpg`,
-                    link: 'Historicke-objekty/historicke-brany.html'
+                    link: 'historicke-objekty/historicke-brany.html'
                 }
             ]
         },
